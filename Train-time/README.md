@@ -13,11 +13,16 @@ This subrepository enables the reproduction of the benchmark results reported in
 * A fast Nvidia GPU (or a large amount of patience)
 * Setting your [Theano flags](http://deeplearning.net/software/theano/library/config.html) to use the GPU
 * [Pylearn2](http://deeplearning.net/software/pylearn2/)
-* [Downloading the datasets](https://github.com/lisa-lab/pylearn2/tree/master/pylearn2/scripts/datasets) you need
-* [PyTables](http://www.pytables.org/usersguide/installation.html) (only for the SVHN dataset)
+  
+  [Pylearn2 是建立在Theano之上的一个机器学习库](https://github.com/Ewenwan/pylearn2)
+
+* [下载数据集Downloading the datasets](https://github.com/lisa-lab/pylearn2/tree/master/pylearn2/scripts/datasets) you need
+
+* [数据集工具 PyTables](http://www.pytables.org/usersguide/installation.html) (only for the SVHN dataset)
+
 * [Lasagne](http://lasagne.readthedocs.org/en/latest/user/installation.html)
 
-## MNIST MLP
+## 手写字体数据集测试 MNIST MLP
 
     python mnist.py
     
@@ -25,7 +30,7 @@ This python script trains an MLP on MNIST with BinaryNet.
 It should run for about 6 hours on a Titan Black GPU.
 The final test error should be around **0.96%**.
 
-## CIFAR-10 ConvNet
+## 10类别图像分类数据集 CIFAR-10 ConvNet
 
     python cifar10.py
     

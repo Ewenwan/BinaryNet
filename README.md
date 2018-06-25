@@ -5,6 +5,33 @@ It is divided in two subrepositories:
 * 训练 Train-time enables the reproduction of the benchmark results reported in the article
 * 运行 Run-time demonstrates the XNOR and baseline GPU kernels described in the article
 
+        首先点燃战火的是Matthieu Courbariaux，他来自深度学习巨头之一的Yoshua Bengio领导的蒙特利尔大学的研究组。
+        他们的文章于2015年11月出现在arxiv.org上。
+        与此前二值神经网络的实验不同，Matthieu只关心系数的二值化，
+        并采取了一种混和的策略，
+
+        构建了一个混有单精度与二值的神经网络BinaryConnect：
+
+        当网络被用来学习时，系数是单精度的，因此不会受量化噪声影响；
+        而当被使用时，系数从单精度的概率抽样变为二值，从而获得加速的好处。
+
+        这一方法在街拍门牌号码数据集(SVHN)上石破天惊地达到超越单精度神经网络的预测准确率，
+        同时超越了人类水平，打破了此前对二值网络的一般印象，并奠定了之后一系列工作的基础。
+        然而由于只有系数被二值化，Matthieu的BinaryConnect只能消减乘法运算，
+        在CPU和GPU上一般只有2倍的理论加速比，
+        但在FPGA甚至ASIC这样的专用硬件上则有更大潜力。
+
+        一石激起千层浪。Matthieu组很快发现自己的工作引起的兴趣超乎想像。
+        事实上，3个月后，Itay Hubara在以色列理工的研究组甚至比Matthieu组,
+        早了一天在arxiv.org上发表了同时实现系数和中间结果二值化，并在SVHN上达到了可观预测准确率的二值网络。
+        由于双方的工作太过相似，三个星期后，也就是2016年2月29日，
+        双方的论文被合并后以Matthieu与Itay并列一作的方式再次发表到arxiv.org上。
+        这个同时实现系数和中间结果二值化的网络被命名为BinaryNet。
+        由于达成了中间结果的二值化，
+        BinaryNet的一个样例实现无需额外硬件，在现有的GPU上即达成了7倍加速。
+
+
+
 # BNN 二值化网络
 
 ![](https://img-blog.csdn.net/20170214003827832?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdGFuZ3dlaTIwMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)

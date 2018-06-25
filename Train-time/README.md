@@ -81,7 +81,7 @@ The final test error should be around **11.40%**.
       每50次迭代，学习率右移一位。
 
 
-## SVHN ConvNet
+## 街拍门牌号码数据集(SVHN) SVHN ConvNet
 
     python svhn.py
     

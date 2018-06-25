@@ -9,6 +9,7 @@ This subrepository enables the reproduction of the benchmark results reported in
 
 * Python 2.7, Numpy, Scipy
 * [Theano](http://deeplearning.net/software/theano/install.html)
+  [我的Theano](https://github.com/Ewenwan/Theano)
 * A fast Nvidia GPU (or a large amount of patience)
 * Setting your [Theano flags](http://deeplearning.net/software/theano/library/config.html) to use the GPU
 * [Pylearn2](http://deeplearning.net/software/pylearn2/)
